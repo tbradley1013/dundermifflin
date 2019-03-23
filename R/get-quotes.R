@@ -28,7 +28,7 @@ get_quote <- function(..., output = c("character", "tbl")){
     "Season ", quote$season,
     ", Epsiode ", quote$episode, " - ",
     quote$name,
-    "\nword count = ", quote$nwords,
+    "\n",
     sep = ""
   )
 
@@ -76,7 +76,8 @@ get_quote <- function(..., output = c("character", "tbl")){
 #' @export
 filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
                           scene = NULL, character = "main",
-                          min_nword = 4, max_nword = 20){
+                          min_nword = 4, max_nword = 20,
+                          include_actions = FALSE){
   quotes <- dundermifflin::office_quotes
 
   if (!is.null(season)){
@@ -126,6 +127,11 @@ filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
     } else {
       quotes <- quotes[tolower(quotes$character) == tolower(character),]
     }
+  }
+
+  if (!include_actions){
+    quotes$quote <- stringi::stri_replace_all(quotes$quote, "", regex = "\\[.*\\]")
+    quotes$quote <- trimws(quotes$quote)
   }
 
   quotes$nwords <- stringi::stri_count(trimws(quotes$quote), regex = "\\s") + 1
