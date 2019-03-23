@@ -2,16 +2,25 @@
 #'
 #' Randomly pull quotes from the office_quotes data frame
 #'
+#' @param season an integer specifyng the season for which to get quotes from
+#' Currently, all seasons are included except season 5
+#' @param episode an integer specifying the episode number to get quote from
+#' @param name a character string with the episode name to get quote from
+#' @param scene an integer specifying the scene number
+#' @param character a character specifying the character to get quote from
+#' @param output a character speicfying whether you want a character string
+#' or a tibble output of the quote information
+#' @param min_nword the minimum number of words a quote must have to be
+#' included, defaults to 4
+#' @param max_nword the maximum number of words a quote can have to be included,
+#' defaults to 20
 #'
+#' @export
 get_quote <- function(season = NULL, episode = NULL, name = NULL,
                       scene = NULL, character = NULL,
                       output = c("character", "tbl"),
                       min_nword = 4, max_nword = 20){
   quotes <- dundermifflin::office_quotes
-
-  quotes$nwords <- stringi::stri_count(quotes$quote, regex = "[[:alpha:]]")
-
-
 
   if (!is.null(season)){
     season <- suppressWarnings(as.integer(season))
@@ -54,6 +63,17 @@ get_quote <- function(season = NULL, episode = NULL, name = NULL,
     quotes <- quotes[tolower(quotes$character) == tolower(character),]
   }
 
+  quotes$nwords <- stringi::stri_count(trimws(quotes$quote), regex = "\\s") + 1
+  # quotes$nwords <- sapply(strsplit(quotes$quote, " "), length)
+
+  if (!is.null(min_nword)){
+    quotes <- quotes[quotes$nwords >= min_nword,]
+  }
+
+  if (!is.null(max_nword)){
+    quotes <- quotes[quotes$nwords <= max_nword,]
+  }
+
   row_n <- nrow(quotes)
 
   row_pick <- sample(1:row_n, 1)
@@ -72,6 +92,7 @@ get_quote <- function(season = NULL, episode = NULL, name = NULL,
     "Season ", quote$season,
     ", Epsiode ", quote$episode, " - ",
     quote$name,
+    "\nword count = ", quote$nwords,
     sep = ""
   )
 
