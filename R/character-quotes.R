@@ -49,3 +49,63 @@ kevin <- function(...){
 angela <- function(...){
   get_quote(character = "Angela")
 }
+
+#' @rdname character_quotes
+#' @export
+erin <- function(...){
+  get_quote(character = "Erin")
+}
+
+#' @rdname character_quotes
+#' @export
+oscar <- function(...){
+  get_quote(character = "Oscar")
+}
+
+#' @rdname character_quotes
+#' @export
+ryan <- function(...){
+  get_quote(character = "ryan")
+}
+
+#' @rdname character_quotes
+#' @export
+darryl <- function(...){
+  get_quote(character = "Darryl")
+}
+
+#' @rdname character_quotes
+#' @export
+phyllis <- function(...){
+  get_quote(character = "Phyllis")
+}
+
+#' @rdname character_quotes
+#' @export
+toby <- function(...){
+  get_quote(character = "Toby")
+}
+
+#' @rdname character_quotes
+#' @export
+kelly <- function(...){
+  get_quote(character = "Kelly")
+}
+
+#' @rdname character_quotes
+#' @export
+stanley <- function(...){
+  get_quote(character = "Stanley")
+}
+
+#' @rdname character_quotes
+#' @export
+meredith <- function(...){
+  get_quote(character = "Meredith")
+}
+
+#' @rdname character_quotes
+#' @export
+creed <- function(...){
+  get_quote(character = "Creed")
+}
