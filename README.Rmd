@@ -38,5 +38,24 @@ get_quote()
 
 ## `character_quotes`
 
-You can also get quotes for individual characters for all of the main cast using their individual functions
+You can also get quotes for individual characters for all of the main cast using their individual functions. 
+
+```{r}
+michael()
+```
+
+```{r}
+pam()
+```
+
+```{r}
+dwight()
+```
+
+
+## Data
+
+This package also comes with a tibble, `office_quotes`, that has all of the lines from the Office, with the exception of season 5. 
+
+All of the data in this dataset was obtained from [theOffice-api](https://github.com/anGie44/theOffice-api).
 

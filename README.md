@@ -23,12 +23,41 @@ default returns one random quote from all of the main office cast. See
 
 ``` r
 get_quote()
-#> You should've sent me a WUPHF.
-#> ~ Ryan
-#> Season 7, Epsiode 9 - WUPHF.com
+#> Today is Ryan's first sales call and I am bringing this boy home a full-grown man.
+#> ~ Dwight
+#> Season 3, Epsiode 5 - Initiation
 ```
 
 ## `character_quotes`
 
 You can also get quotes for individual characters for all of the main
-cast using their individual functions
+cast using their individual functions.
+
+``` r
+michael()
+#> I would've been chief of surgery... Or a cowboy.
+#> ~ Michael
+#> Season 4, Epsiode 4 - Money
+```
+
+``` r
+pam()
+#> I can't tell if she's getting anything.  It just doesn't really feel right.
+#> ~ Pam
+#> Season 6, Epsiode 16 - The Delivery
+```
+
+``` r
+dwight()
+#> Quick Oscar update. I have conducted interviews with everyone in the office.
+#> ~ Dwight
+#> Season 2, Epsiode 13 - The Secret
+```
+
+## Data
+
+This package also comes with a tibble, `office_quotes`, that has all of
+the lines from the Office, with the exception of season 5.
+
+All of the data in this dataset was obtained from
+[theOffice-api](https://github.com/anGie44/theOffice-api).
