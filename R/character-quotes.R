@@ -109,3 +109,5 @@ meredith <- function(...){
 creed <- function(...){
   get_quote(character = "Creed", ...)
 }
+
+
