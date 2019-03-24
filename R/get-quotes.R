@@ -8,6 +8,7 @@
 #'
 #' @export
 get_quote <- function(..., output = c("character", "tbl")){
+
   quotes <- filter_quotes(...)
 
   row_n <- nrow(quotes)
@@ -19,15 +20,14 @@ get_quote <- function(..., output = c("character", "tbl")){
 
   output <- match.arg(output, choices = c("character", "tbl"))
 
-
   cat(
     quote$quote,
     "\n~ ",
-    quote$character,
+    crayon::green(quote$character),
     "\n",
     "Season ", quote$season,
     ", Epsiode ", quote$episode, " - ",
-    quote$name,
+    crayon::blue(quote$name),
     "\n",
     sep = ""
   )
@@ -76,7 +76,7 @@ get_quote <- function(..., output = c("character", "tbl")){
 #' @export
 filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
                           scene = NULL, character = "main",
-                          min_nword = 4, max_nword = 20,
+                          min_nword = 6, max_nword = 60,
                           include_actions = FALSE){
   quotes <- dundermifflin::office_quotes
 
