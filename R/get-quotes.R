@@ -78,7 +78,7 @@ filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
                           scene = NULL, character = "main",
                           min_nword = 6, max_nword = 60,
                           include_actions = FALSE){
-  quotes <- dundermifflin::office_quotes
+  quotes <- na.omit(dundermifflin::office_quotes)
 
   if (!is.null(season)){
     season <- suppressWarnings(as.integer(season))
@@ -118,15 +118,15 @@ filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
   }
 
   if (!is.null(character)){
-    if (character == "main"){
-      character <- c("Michael", "Dwight", "Jim", "Pam", "Andy", "Kevin",
-                     "Angela", "Erin", "Oscar", "Ryan", "Darryl",
-                     "Phyllis", "Toby", "Kelly", "Stanley",
-                     "Meredith", "Creed")
-      quotes <- quotes[tolower(quotes$character) %in% tolower(character),]
-    } else {
-      quotes <- quotes[tolower(quotes$character) == tolower(character),]
-    }
+
+    character <- departments(character)
+    # if (character == "main"){
+    #   character <- c("Michael", "Dwight", "Jim", "Pam", "Andy", "Kevin",
+    #                  "Angela", "Erin", "Oscar", "Ryan", "Darryl",
+    #                  "Phyllis", "Toby", "Kelly", "Stanley",
+    #                  "Meredith", "Creed")
+    # }
+    quotes <- quotes[tolower(quotes$character) %in% tolower(character),]
   }
 
   if (!include_actions){
