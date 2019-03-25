@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 
 An R package to get The Office quotes whenever you want!
 
-<iframe src="https://giphy.com/embed/Is1O1TWV0LEJi" width="480" height="272" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/excited-the-office-celebrate-Is1O1TWV0LEJi">via GIPHY</a></p>
+![](https://media.giphy.com/media/Is1O1TWV0LEJi/giphy.gif)
 
 ## Installation
 
@@ -31,7 +31,7 @@ library(dundermifflin)
 
 ## Usage
 
-<iframe src="https://giphy.com/embed/5wWf7H89PisM6An8UAU" width="480" height="271" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/editingandlayout-the-office-michael-scott-5wWf7H89PisM6An8UAU">via GIPHY</a></p>
+![](https://media.giphy.com/media/5wWf7H89PisM6An8UAU/source.gif)
 
 ### `get_quote`
 
@@ -84,4 +84,4 @@ This package also comes with a tibble, `office_quotes`, that has all of the line
 All of the data in this dataset was obtained from [theOffice-api](https://github.com/anGie44/theOffice-api).
 
 
-<iframe src="https://giphy.com/embed/dsKnRuALlWsZG" width="480" height="271" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/the-office-steve-carell-michael-scott-dsKnRuALlWsZG">via GIPHY</a></p>
+![](https://media.giphy.com/media/dsKnRuALlWsZG/giphy.gif)
