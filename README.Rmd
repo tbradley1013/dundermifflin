@@ -17,6 +17,8 @@ knitr::opts_chunk$set(
 
 An R package to get The Office quotes whenever you want!
 
+<iframe src="https://giphy.com/embed/Is1O1TWV0LEJi" width="480" height="272" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/excited-the-office-celebrate-Is1O1TWV0LEJi">via GIPHY</a></p>
+
 ## Installation
 
 ``` r
@@ -27,7 +29,11 @@ remotes::install_github("tbradley1013/dundermifflin")
 library(dundermifflin)
 ```
 
-## `get_quote`
+## Usage
+
+<iframe src="https://giphy.com/embed/5wWf7H89PisM6An8UAU" width="480" height="271" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/editingandlayout-the-office-michael-scott-5wWf7H89PisM6An8UAU">via GIPHY</a></p>
+
+### `get_quote`
 
 The main function of the package is `get_quote`. This function by default returns one random quote from all of the main office cast. See `?filter_quotes` to see who is included in the main office option. 
 
@@ -36,20 +42,38 @@ get_quote()
 ```
 
 
-## `character_quotes`
+### Character Quotes
 
 You can also get quotes for individual characters for all of the main cast using their individual functions. 
 
 ```{r}
 michael()
-```
 
-```{r}
 pam()
+
+dwight()
 ```
 
+
+### Quotes by Department
+
+You can also get quotes for specific departments!
+
 ```{r}
-dwight()
+sales()
+
+accounting()
+
+hr()
+```
+
+
+## Curated dataset
+
+Over the next few months, I plan to work on creating a list of the funnier quotes I come across while using the `dundermifflin` package to create a curated data set of funny quotes that users can use as their source for random quotes! You can help with this! I have opened an issue named [Funny Quote Indices](https://github.com/tbradley1013/dundermifflin/issues/1) where you can paste the quote and the indices of the quote. In order to get the indices of the quotes you are seeing, be sure to set `idx = TRUE`
+
+```{r}
+get_quote(idx = TRUE)
 ```
 
 
@@ -59,3 +83,5 @@ This package also comes with a tibble, `office_quotes`, that has all of the line
 
 All of the data in this dataset was obtained from [theOffice-api](https://github.com/anGie44/theOffice-api).
 
+
+<iframe src="https://giphy.com/embed/dsKnRuALlWsZG" width="480" height="271" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/the-office-steve-carell-michael-scott-dsKnRuALlWsZG">via GIPHY</a></p>
