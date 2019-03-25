@@ -19,7 +19,7 @@ get_quote <- function(..., force_print = FALSE){
 
   class(quote) <- c("dunder", "tbl_df", "tbl", "data.frame")
 
-  if (!force_print) print(quote)
+  if (force_print) print(quote)
 
   return(quote)
 
