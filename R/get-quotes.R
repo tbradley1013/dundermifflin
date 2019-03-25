@@ -7,9 +7,9 @@
 #' or a tibble output of the quote information
 #'
 #' @export
-get_quote <- function(..., output = c("character", "tbl")){
+get_quote <- function(..., output = c("character", "tbl"), idx = FALSE){
 
-  quotes <- filter_quotes(...)
+  quotes <- filter_quotes(idx = idx, ...)
 
   row_n <- nrow(quotes)
 
@@ -29,6 +29,7 @@ get_quote <- function(..., output = c("character", "tbl")){
     ", Epsiode ", quote$episode, " - ",
     crayon::blue(quote$name),
     "\n",
+    ifelse(idx, paste0("Quote Index: ", quote$idx, "\n"), ""),
     sep = ""
   )
 
@@ -77,8 +78,15 @@ get_quote <- function(..., output = c("character", "tbl")){
 filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
                           scene = NULL, character = "main",
                           min_nword = 15, max_nword = 100,
-                          include_actions = FALSE){
-  quotes <- na.omit(dundermifflin::office_quotes)
+                          include_actions = FALSE,
+                          idx = FALSE){
+  quotes <- dundermifflin::office_quotes
+
+  if (idx){
+   quotes$idx <- as.numeric(rownames(quotes))
+  }
+
+  quotes <- na.omit(quotes)
 
   if (!is.null(season)){
     season <- suppressWarnings(as.integer(season))
