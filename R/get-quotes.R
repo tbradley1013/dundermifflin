@@ -84,8 +84,6 @@ as.character.dunder <- function(x, ...){
 #' Other Departments - Sales, Accounting, HR, Customer Service, Reception,
 #' and Corporate
 #'
-#'
-#' @importFrom stats na.omit
 #' @export
 filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
                           scene = NULL, character = "main",
@@ -98,7 +96,7 @@ filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
    quotes$idx <- as.numeric(rownames(quotes))
   }
 
-  quotes <- stats::na.omit(quotes)
+  quotes <- quotes[!is.na(quotes$character),]
 
   if (!is.null(season)){
     season <- suppressWarnings(as.integer(season))
