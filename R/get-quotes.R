@@ -96,7 +96,7 @@ filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
    quotes$idx <- as.numeric(rownames(quotes))
   }
 
-  quotes <- na.omit(quotes)
+  quotes <- stats::na.omit(quotes)
 
   if (!is.null(season)){
     season <- suppressWarnings(as.integer(season))
