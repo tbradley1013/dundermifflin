@@ -9,7 +9,7 @@
 #' @export
 get_quote <- function(..., force_print = FALSE){
 
-  quotes <- filter_quotes(idx = idx, ...)
+  quotes <- filter_quotes(...)
 
   row_n <- nrow(quotes)
 
