@@ -3,11 +3,11 @@
 #' Randomly pull quotes from the office_quotes data frame
 #'
 #' @param ... arguments to pass to \link[dundermifflin]{filter_quotes}
-#' @param output a character speicfying whether you want a character string
-#' or a tibble output of the quote information
+#' @param force_print a logical speicfying whether you want the quote to print
+#' even if it is assigned to a variable name
 #'
 #' @export
-get_quote <- function(..., output = c("character", "tbl"), idx = FALSE){
+get_quote <- function(..., force_print = FALSE){
 
   quotes <- filter_quotes(idx = idx, ...)
 
@@ -16,43 +16,46 @@ get_quote <- function(..., output = c("character", "tbl"), idx = FALSE){
   row_pick <- sample(1:row_n, 1)
 
   quote <- quotes[row_pick, ]
-  # return(quote)
 
-  output <- match.arg(output, choices = c("character", "tbl"))
+  class(quote) <- c("dunder", "tbl_df", "tbl", "data.frame")
 
-  cat(
-    quote$quote,
-    "\n~ ",
-    crayon::green(quote$character),
-    "\n",
-    "Season ", quote$season,
-    ", Epsiode ", quote$episode, " - ",
-    crayon::blue(quote$name),
-    "\n",
-    ifelse(idx, paste0("Quote Index: ", quote$idx, "\n"), ""),
-    sep = ""
-  )
+  if (!force_print) print(quote)
 
-  if (output == "character"){
-    out <- paste(
-      quote$quote,
-      "\n~ ",
-      quote$character,
-      "\n",
-      "Season ", quote$season,
-      ", Epsiode ", quote$episode, " - ",
-      quote$name,
-      sep = ""
-    )
-    invisible(out)
-  } else {
-    invisible(quote)
-  }
+  return(quote)
 
 
 }
 
 
+#' @export
+print.dunder <- function(x, ...){
+  cat(
+    x$quote,
+    "\n~ ",
+    crayon::green(x$character),
+    "\n",
+    "Season ", x$season,
+    ", Epsiode ", x$episode, " - ",
+    crayon::blue(x$name),
+    "\n",
+    ifelse("idx" %in% colnames(x), paste0("Quote Index: ", x$idx, "\n"), ""),
+    sep = ""
+  )
+}
+
+#' @export
+as.character.dunder <- function(x, ...){
+    paste(
+      x$quote,
+      "\n~ ",
+      x$character,
+      "\n",
+      "Season ", x$season,
+      ", Epsiode ", x$episode, " - ",
+      x$name,
+      sep = ""
+    )
+}
 
 
 #' Filter office_quotes
@@ -62,17 +65,24 @@ get_quote <- function(..., output = c("character", "tbl"), idx = FALSE){
 #' @param episode an integer specifying the episode number to get quote from
 #' @param name a character string with the episode name to get quote from
 #' @param scene an integer specifying the scene number
-#' @param character a character specifying the character to get quote from.
+#' @param character a character specifying the character or department to get quote from.
 #' Defaults to 'main', see details
 #' @param min_nword the minimum number of words a quote must have to be
 #' included, defaults to 4
 #' @param max_nword the maximum number of words a quote can have to be included,
 #' defaults to 20
+#' @param include_actions should non spoken actions be included in the output?
+#' Defaults to FALSE (i.e. actions will not be included)
+#' @param idx logical specifying whether the quote index should be printed
+#' with the quote
 #'
 #' @details
 #' Main Character List - Michael, Dwight, Jim, Pam, Andy, Kevin, Angela,
 #' Erin, Oscar, Ryan, Darryl, Phyllis, Toby, Kelly, Stanley, Meredith,
 #' and Creed
+#'
+#' Other Departments - Sales, Accounting, HR, Customer Service, Reception,
+#' and Corporate
 #'
 #' @export
 filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
