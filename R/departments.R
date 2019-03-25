@@ -46,12 +46,6 @@ corporate <- function(...){
 
 
 departments <- function(department){
-  department <- match.arg(
-    department,
-    choices = c("main", "sales", "accounting", "customer service",
-                "hr", "reception", "corporate")
-  )
-
   if (!tolower(department) %in% c("main", "sales", "accounting",
                                   "customer service", "hr",
                                   "reception", "corporate")) {
