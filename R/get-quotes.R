@@ -84,6 +84,8 @@ as.character.dunder <- function(x, ...){
 #' Other Departments - Sales, Accounting, HR, Customer Service, Reception,
 #' and Corporate
 #'
+#'
+#' @importFrom stats na.omit
 #' @export
 filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
                           scene = NULL, character = "main",
