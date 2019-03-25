@@ -77,7 +77,7 @@ get_quote <- function(..., output = c("character", "tbl"), idx = FALSE){
 #' @export
 filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
                           scene = NULL, character = "main",
-                          min_nword = 15, max_nword = 100,
+                          min_nword = 10, max_nword = 100,
                           include_actions = FALSE,
                           idx = FALSE){
   quotes <- dundermifflin::office_quotes
