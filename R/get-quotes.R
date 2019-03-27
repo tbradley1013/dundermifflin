@@ -94,10 +94,7 @@ filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
                           min_nword = 10, max_nword = 100,
                           include_actions = FALSE){
   quotes <- dundermifflin::office_quotes
-
-
-  quotes$idx <- as.numeric(rownames(quotes))
-
+  # quotes$idx <- as.numeric(rownames(quotes))
 
   quotes <- quotes[!is.na(quotes$character),]
 

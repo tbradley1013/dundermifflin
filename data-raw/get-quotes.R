@@ -28,4 +28,7 @@ office_quotes <- map_dfr(c(1:4,6:9), ~{
 })
 
 
-usethis::use_data(office_quotes)
+office_quotes$idx <- as.numeric(rownames(office_quotes))
+office_quotes <- dplyr::select(office_quotes, idx, dplyr::everything())
+
+usethis::use_data(office_quotes, overwrite = TRUE)
