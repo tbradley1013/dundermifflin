@@ -4,13 +4,16 @@
 \alias{get_quote}
 \title{Get office quotes}
 \usage{
-get_quote(..., force_print = FALSE)
+get_quote(..., force_print = FALSE, idx = FALSE)
 }
 \arguments{
 \item{...}{arguments to pass to \link[dundermifflin]{filter_quotes}}
 
 \item{force_print}{a logical speicfying whether you want the quote to print
 even if it is assigned to a variable name}
+
+\item{idx}{logical specifying whether the quote index should be printed
+with the quote}
 }
 \description{
 Randomly pull quotes from the office_quotes data frame

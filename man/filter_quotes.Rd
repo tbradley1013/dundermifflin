@@ -6,7 +6,7 @@
 \usage{
 filter_quotes(season = NULL, episode = NULL, name = NULL,
   scene = NULL, character = "main", min_nword = 10,
-  max_nword = 100, include_actions = FALSE, idx = FALSE)
+  max_nword = 100, include_actions = FALSE)
 }
 \arguments{
 \item{season}{an integer specifyng the season for which to get quotes from
@@ -29,9 +29,6 @@ defaults to 20}
 
 \item{include_actions}{should non spoken actions be included in the output?
 Defaults to FALSE (i.e. actions will not be included)}
-
-\item{idx}{logical specifying whether the quote index should be printed
-with the quote}
 }
 \description{
 Filter office_quotes

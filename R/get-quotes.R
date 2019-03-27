@@ -5,9 +5,11 @@
 #' @param ... arguments to pass to \link[dundermifflin]{filter_quotes}
 #' @param force_print a logical speicfying whether you want the quote to print
 #' even if it is assigned to a variable name
+#' @param idx logical specifying whether the quote index should be printed
+#' with the quote
 #'
 #' @export
-get_quote <- function(..., force_print = FALSE){
+get_quote <- function(..., force_print = FALSE, idx = FALSE){
 
   quotes <- filter_quotes(...)
 
@@ -16,6 +18,10 @@ get_quote <- function(..., force_print = FALSE){
   row_pick <- sample(1:row_n, 1)
 
   quote <- quotes[row_pick, ]
+
+  set_last_quote(quote$idx)
+
+  if (!idx) quote$idx <- NULL
 
   class(quote) <- c("dunder", "tbl_df", "tbl", "data.frame")
 
@@ -73,8 +79,6 @@ as.character.dunder <- function(x, ...){
 #' defaults to 20
 #' @param include_actions should non spoken actions be included in the output?
 #' Defaults to FALSE (i.e. actions will not be included)
-#' @param idx logical specifying whether the quote index should be printed
-#' with the quote
 #'
 #' @details
 #' Main Character List - Michael, Dwight, Jim, Pam, Andy, Kevin, Angela,
@@ -88,13 +92,12 @@ as.character.dunder <- function(x, ...){
 filter_quotes <- function(season = NULL, episode = NULL, name = NULL,
                           scene = NULL, character = "main",
                           min_nword = 10, max_nword = 100,
-                          include_actions = FALSE,
-                          idx = FALSE){
+                          include_actions = FALSE){
   quotes <- dundermifflin::office_quotes
 
-  if (idx){
-   quotes$idx <- as.numeric(rownames(quotes))
-  }
+
+  quotes$idx <- as.numeric(rownames(quotes))
+
 
   quotes <- quotes[!is.na(quotes$character),]
 
