@@ -41,7 +41,7 @@ print.dunder <- function(x, ...){
     crayon::green(x$character),
     "\n",
     "Season ", x$season,
-    ", Epsiode ", x$episode, " - ",
+    ", Episode ", x$episode, " - ",
     crayon::blue(x$name),
     "\n",
     ifelse("idx" %in% colnames(x), paste0("Quote Index: ", x$idx, "\n"), ""),
@@ -57,7 +57,7 @@ as.character.dunder <- function(x, ...){
       x$character,
       "\n",
       "Season ", x$season,
-      ", Epsiode ", x$episode, " - ",
+      ", Episode ", x$episode, " - ",
       x$name,
       sep = ""
     )
