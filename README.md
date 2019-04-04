@@ -29,9 +29,10 @@ default returns one random quote from all of the main office cast. See
 
 ``` r
 get_quote()
-#> Thanks to Toby, I have a very strong prejudice against Human Resources. I believe that the department is a breeding ground for monsters. What I failed to consider though, is that not all monsters are bad. Like E.T. Is Holly our extraterrestrial? Maybe. Or maybe she's just an awesome woman from this planet.
-#> ~ Michael
-#> Season 4, Epsiode 14 - Goodbye Toby
+#> I know exactly what he's talking about. I sprout mung beans on a damp paper 
+#> towel in my desk drawer. Very nutritious. But they smell like death.
+#> ~ Creed
+#> Season 2, Episode 21 - Conflict Resolution
 ```
 
 ### Character Quotes
@@ -45,15 +46,22 @@ michael()
 #> ~ Michael
 #> Season 3, Epsiode 20 - Product Recall
 
-pam()
-#> Oh, can we stop by that pie stand on the way?
-#> ~ Pam
-#> Season 9, Epsiode 4 - Work Bus
+kelly()
+#> Um, if I'm out, I'm going to sue this ENTIRE COMPANY for discrimination.
+#> ~ Kelly
+#> Season 7, Episode 6 - Costume Contest
 
 dwight()
-#> Thank you very much.  Okay, secretary says Wallace is away for the day and won't be coming back into the office.
+#> I don't want to alarm people, but there is a distinct chance that we are all 
+#> about to be killed
 #> ~ Dwight
-#> Season 3, Epsiode 7 - Branch Closing
+#> Season 8, Episode 22 - Fundraiser
+
+kevin()
+#> Me mechanic not speak English. But he know what me mean when me say “car no go”, 
+#> and we best friends.  So me think: why waste time, say lot word when few word do trick?
+#> ~ Kevin
+#> Season 8, Episode 2 - The Incentive
 ```
 
 ### Quotes by Department
@@ -62,9 +70,12 @@ You can also get quotes for specific departments\!
 
 ``` r
 sales()
-#> You can buy new stuff but you can't buy a new party.
-#> ~ Pam
-#> Season 4, Epsiode 9 - Dinner Party
+#> Andy revealed himself to be a double agent.  At which point Dwight felt comfortable 
+#> revealing that he also was double agent.  And then Michael announced to everybody 
+#> that - get this- he was a double agent.  Oh, and it is 6:00.
+#> ~ Jim
+#> Season 6, Episode 9 - Murder
+
 
 accounting()
 #> Our office has an unusually large number of… unusually large people.
@@ -72,9 +83,11 @@ accounting()
 #> Season 9, Epsiode 19 - Stairmageddon
 
 hr()
-#> I don't think Pam's gonna want to come into the men's room.
-#> ~ Toby
-#> Season 2, Epsiode 12 - The Injury
+#> I cannot keep myself from Michael. Everything he does is sexy. He has 
+#> this undeniable animal magnetism. He's a jungle cat. The man exudes sex. 
+#> He can put both his legs behind his head.
+#> ~ Holly
+#> Season 7, Episode 15 - PDA
 ```
 
 ## Curated dataset
@@ -90,10 +103,11 @@ the indices of the quotes you are seeing, be sure to set `idx = TRUE`
 
 ``` r
 get_quote(idx = TRUE)
-#> Um, you don't, I don't think, come all the way back, you know.  Especially working together.
-#> ~ Jim
-#> Season 2, Epsiode 8 - Performance Review
-#> Quote Index: 3792
+#> In a way it’s like I have a son. And who knows? Maybe someday they’ll hire 
+#> someone who looks like a younger version of him. And then I’ll have a grandson.
+#> ~ Dwight
+#> Season 9, Episode 1 - New Guys
+#> Quote Index: 43102
 ```
 
 ## Data
