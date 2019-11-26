@@ -5,7 +5,7 @@ Version: 0.1.0
 Authors@R: c(person("Tyler", "Bradley", email = "tcb85@drexel.edu", role = c("aut", "cre")))
 Description: This package provides functions to randomly select and return
   quotes from the show the Office. 
-License: MIT + file LICENSE
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Imports: 
