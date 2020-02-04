@@ -9,5 +9,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
-    stringi
+    stringi,
+    crayon
 RoxygenNote: 6.1.0
