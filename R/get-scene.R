@@ -53,7 +53,7 @@ as.character.dunder_scene <- function(x, ...){
   for (i in 1:nrow(x)){
     qt <- x[i,]
     out[i] <- paste0(
-      qt$character, ": ", rep(" ", (max_char_length - nchar(qt$character))),
+      qt$character, ": ", paste(rep(" ", (max_char_length - nchar(qt$character))), collapse = ""),
       qt$quote
     )
   }
