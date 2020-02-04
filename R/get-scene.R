@@ -1,6 +1,8 @@
 # Get Scene
 
-
+#' Get a random scene dialog from the Office
+#'
+#' @export
 random_scene <- function(){
   season <- sample(c(1:4, 6:9), 1)
   episode <- sample(ep_n_scene$episode[ep_n_scene$season == season], 1)
@@ -11,16 +13,10 @@ random_scene <- function(){
   return(scene_quotes)
 }
 
-
+#' @export
 print.dunder_scene <- function(x, ...){
   screen_width <- options()$width
   max_char_length <- max(nchar(x$character))
-
-  # if (max_quote_length > screen_width){
-  #   width <- screen_width
-  # } else {
-  #   width <- max_quote_length
-  # }
 
   if (length(unique(x$character)) <= 7){
     cols <- c("red", "green", "yellow", "blue", "magenta", "cyan", "silver")
@@ -43,7 +39,6 @@ print.dunder_scene <- function(x, ...){
       char_color(qt$character, cols),
       ": ", rep(" ", (max_char_length - nchar(qt$character))),
       qt$quote,
-      # "\n", rep(" ", (width - nchar(qt$character) - 3)), "~ ",
       "\n",
       sep = ""
     )
