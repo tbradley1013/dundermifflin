@@ -4,6 +4,7 @@
 #'
 #' @export
 random_scene <- function(){
+  ep_n_scene <- dundermifflin::ep_n_scene
   season <- sample(c(1:4, 6:9), 1)
   episode <- sample(ep_n_scene$episode[ep_n_scene$season == season], 1)
   scene <- sample(ep_n_scene$scene[ep_n_scene$season == season & ep_n_scene$episode == episode], 1)
