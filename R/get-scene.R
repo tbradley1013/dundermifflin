@@ -46,6 +46,22 @@ print.dunder_scene <- function(x, ...){
   }
 }
 
+#' @export
+as.character.dunder_scene <- function(x, ...){
+  max_char_length <- max(nchar(x$character))
+  out <- character(nrow(x))
+  for (i in 1:nrow(x)){
+    qt <- x[i,]
+    out[i] <- paste0(
+      qt$character, ": ", rep(" ", (max_char_length - nchar(qt$character))),
+      qt$quote
+    )
+  }
+
+  out <- paste(out, collapse = "\n")
+  return(out)
+}
+
 
 char_color <- function(character, cols){
   color <- cols[names(cols) == character]
