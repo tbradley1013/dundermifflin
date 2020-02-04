@@ -18,3 +18,16 @@ with the quote}
 \description{
 Randomly pull quotes from the office_quotes data frame
 }
+\examples{
+
+get_quote()
+
+# return quote with index
+get_quote(idx = TRUE)
+
+# get quotes using various filters
+get_quote(season = 1)
+get_quote(season = 4, episode = 3)
+get_quote(season = 4, character = "Jim")
+
+}

@@ -61,3 +61,11 @@ creed(...)
 \description{
 Get quotes from specific characters
 }
+\examples{
+
+michael()
+jim()
+kelly()
+dwight()
+
+}

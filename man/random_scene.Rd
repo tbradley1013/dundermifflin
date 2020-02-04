@@ -9,3 +9,8 @@ random_scene()
 \description{
 Get a random scene dialog from the Office
 }
+\examples{
+
+random_scene()
+
+}

@@ -28,3 +28,9 @@ corporate(...)
 \description{
 Get quotes from different departments of the office
 }
+\examples{
+
+sales()
+accounting()
+
+}
