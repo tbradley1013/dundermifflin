@@ -30,5 +30,7 @@ office_quotes <- map_dfr(c(1:4,6:9), ~{
 
 office_quotes$idx <- as.numeric(rownames(office_quotes))
 office_quotes <- dplyr::select(office_quotes, idx, dplyr::everything())
+ep_n_scene <- dplyr::distinct(office_quotes, season, episode, scene)
 
 usethis::use_data(office_quotes, overwrite = TRUE)
+usethis::use_data(ep_n_scene, overwrite = TRUE)

@@ -5,7 +5,7 @@
 
 An R package to get The Office quotes whenever you want\!
 
-![](https://media.giphy.com/media/Is1O1TWV0LEJi/giphy.gif)
+![](https://media.giphy.com/media/5wWf7H89PisM6An8UAU/giphy.gif)
 
 ## Installation
 
