@@ -2,6 +2,10 @@
 
 #' Get a random scene dialog from the Office
 #'
+#' @examples
+#'
+#' random_scene()
+#'
 #' @export
 random_scene <- function(){
   ep_n_scene <- dundermifflin::ep_n_scene

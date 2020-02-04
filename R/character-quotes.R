@@ -1,6 +1,14 @@
 #' Get quotes from specific characters
 #'
 #' @param ... arguments to be passed to \link[dundermifflin]{get_quote}
+#'
+#' @examples
+#'
+#' michael()
+#' jim()
+#' kelly()
+#' dwight()
+#'
 #' @name character_quotes
 NULL
 

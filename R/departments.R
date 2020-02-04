@@ -1,6 +1,12 @@
 #' Get quotes from different departments of the office
 #'
 #' @param ... arguments to be passed to \link[dundermifflin]{get_quote}
+#'
+#' @examples
+#'
+#' sales()
+#' accounting()
+#'
 #' @name department_quotes
 NULL
 
