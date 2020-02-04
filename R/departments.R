@@ -3,9 +3,11 @@
 #' @param ... arguments to be passed to \link[dundermifflin]{get_quote}
 #'
 #' @examples
+#' \dontrun{
+#'   sales()
+#'   accounting()
+#' }
 #'
-#' sales()
-#' accounting()
 #'
 #' @name department_quotes
 NULL

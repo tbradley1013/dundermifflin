@@ -29,8 +29,10 @@ corporate(...)
 Get quotes from different departments of the office
 }
 \examples{
+\dontrun{
+  sales()
+  accounting()
+}
 
-sales()
-accounting()
 
 }

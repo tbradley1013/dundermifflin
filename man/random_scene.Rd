@@ -11,6 +11,6 @@ Get a random scene dialog from the Office
 }
 \examples{
 
-random_scene()
+\dontrun{random_scene()}
 
 }

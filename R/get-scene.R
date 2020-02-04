@@ -4,7 +4,7 @@
 #'
 #' @examples
 #'
-#' random_scene()
+#' \dontrun{random_scene()}
 #'
 #' @export
 random_scene <- function(){

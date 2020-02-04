@@ -62,10 +62,12 @@ creed(...)
 Get quotes from specific characters
 }
 \examples{
+\dontrun{
+  michael()
+  jim()
+  kelly()
+  dwight()
+}
 
-michael()
-jim()
-kelly()
-dwight()
 
 }

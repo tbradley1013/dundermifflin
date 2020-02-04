@@ -3,11 +3,13 @@
 #' @param ... arguments to be passed to \link[dundermifflin]{get_quote}
 #'
 #' @examples
+#' \dontrun{
+#'   michael()
+#'   jim()
+#'   kelly()
+#'   dwight()
+#' }
 #'
-#' michael()
-#' jim()
-#' kelly()
-#' dwight()
 #'
 #' @name character_quotes
 NULL
