@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# dundermifflin <img src="dundermifflin.png" align="right" width="175px" height="203px" />
+# dundermifflin <img src="dundermifflin.png" align="right" width="300px" height="349px" />
 
 An R package to get The Office quotes whenever you want!
 
