@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# dundermifflin
+# dundermifflin <img src="dundermifflin.png" align="right" width="175px" height="203px" />
 
 An R package to get The Office quotes whenever you want\!
 
