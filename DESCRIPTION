@@ -4,10 +4,10 @@ Title: The Office Quotes on-Demand
 Version: 0.1.1
 Authors@R: c(person("Tyler", "Bradley", email = "tcb85@drexel.edu", role = c("aut", "cre")))
 Description: Provides functions to randomly select and return
-  quotes or entire scenes from the show the Office. 
-  Receive laughs from one of of the greatest sitcoms 
-  of all time on demand. Add these functions to your 
-  '.Rprofile' to get a good laugh everytime you start
+  quotes or entire scenes from the American version of
+  the show the Office. Receive laughs from one of of the 
+  greatest sitcoms of all time on demand. Add these functions 
+  to your  '.Rprofile' to get a good laugh everytime you start
   a new R session.
 License: MIT + file LICENSE
 Encoding: UTF-8
