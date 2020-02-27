@@ -1,12 +1,16 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<<<<<<< HEAD
 [![](https://www.r-pkg.org/badges/version/dundermifflin?color=green)](https://cran.r-project.org/package=dundermifflin)
 [![](http://cranlogs.r-pkg.org/badges/last-month/dundermifflin?color=blue)](https://cran.r-project.org/package=dundermifflin)
 [![](https://img.shields.io/badge/lifecycle-stable-green.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![](https://img.shields.io/badge/devel%20version-0.1.1-orange.svg)](https://github.com/tbradley1013/dundermifflin)
 
 # dundermifflin
+=======
+# dundermifflin <img src="dundermifflin.png" align="right" width="300px" height="349px" />
+>>>>>>> 10b0eaea1b7045bd916cff4cd7b5e6fb253b8c14
 
 An R package to get The Office quotes whenever you want\!
 
